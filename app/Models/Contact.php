@@ -28,6 +28,6 @@ class Contact extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class)->withTimestmps();
+        return $this->belongsToMany(Tag::class)->withTimestamps();
     }
 }
