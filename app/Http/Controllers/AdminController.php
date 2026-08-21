@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Request\IndexContactRequest;
+use App\Http\Requests\IndexContactRequest;
 use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Tag;
@@ -34,7 +34,7 @@ class AdminController extends Controller
             $query->whereDate('created_at', $request->date);
         }
 
-        $contacts = $request->latest()->paginate(7);
+        $contacts = $query->latest()->paginate(7);
 
         $categories = Category::all();
         $tags = Tag::all();

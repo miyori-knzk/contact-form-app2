@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Request\StoreContactRequest;
+use App\Http\Requests\StoreContactRequest;
 use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Tag;
@@ -23,7 +23,7 @@ class ContactController extends Controller
         $category = Category::find($validated['category_id']);
         $tags = isset($validated['tag_ids']) ? Tag::whereIn('id', $validated['tag_ids'])->get() : collect();
 
-        return view('contact.comfirm', compact('validated', 'category', 'tags'));
+        return view('contact.confirm', compact('validated', 'category', 'tags'));
     }
 
     public function store(StoreContactRequest $request)

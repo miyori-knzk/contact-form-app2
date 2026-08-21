@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validarion\Rule;
+use Illuminate\Validation\Rule;
 
 class UpdateTagRequest extends FormRequest
 {
